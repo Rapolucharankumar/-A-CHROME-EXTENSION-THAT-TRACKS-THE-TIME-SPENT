@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Time Tracker - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Website Time Tracker Dashboard</h1>
+            <div class="header-actions">
+                <button class="btn btn-secondary" id="refreshData">Refresh</button>
+                <button class="btn btn-primary" id="exportData">Export Data</button>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <!-- Overview Cards -->
+            <div class="overview-section">
+                <div class="overview-card">
+                    <div class="card-icon">📊</div>
+                    <div class="card-content">
+                        <div class="card-value" id="totalTimeToday">0h 0m</div>
+                        <div class="card-label">Total Time Today</div>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="card-icon">✅</div>
+                    <div class="card-content">
+                        <div class="card-value" id="productiveTimeToday">0h 0m</div>
+                        <div class="card-label">Productive Time</div>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="card-icon">❌</div>
+                    <div class="card-content">
+                        <div class="card-value" id="unproductiveTimeToday">0h 0m</div>
+                        <div class="card-label">Unproductive Time</div>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="card-icon">🎯</div>
+                    <div class="card-content">
+                        <div class="card-value" id="productivityScore">0%</div>
+                        <div class="card-label">Productivity Score</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="chart-container">
+                    <h3>Weekly Productivity Trend</h3>
+                    <canvas id="weeklyChart"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Site Categories Distribution</h3>
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Top Sites Section -->
+            <div class="sites-section">
+                <div class="sites-container">
+                    <h3>Top Sites This Week</h3>
+                    <div class="sites-table">
+                        <div class="table-header">
+                            <div class="col-domain">Domain</div>
+                            <div class="col-time">Time</div>
+                            <div class="col-visits">Visits</div>
+                            <div class="col-category">Category</div>
+                        </div>
+                        <div class="table-body" id="topSitesTable">
+                            <div class="loading">Loading...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sites-container">
+                    <h3>Daily Breakdown</h3>
+                    <div class="daily-breakdown" id="dailyBreakdown">
+                        <div class="loading">Loading...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weekly Report Section -->
+            <div class="report-section">
+                <h3>Weekly Productivity Report</h3>
+                <div class="report-content" id="weeklyReport">
+                    <div class="loading">Generating report...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

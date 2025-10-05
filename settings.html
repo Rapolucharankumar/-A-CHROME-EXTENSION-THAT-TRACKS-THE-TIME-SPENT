@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Time Tracker - Settings</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+    <div class="settings-container">
+        <header class="settings-header">
+            <h1>Settings</h1>
+            <button class="btn btn-secondary" id="backToDashboard">← Back to Dashboard</button>
+        </header>
+
+        <div class="settings-content">
+            <!-- Website Categories -->
+            <div class="settings-section">
+                <h2>Website Categories</h2>
+                <p class="section-description">Customize which websites are considered productive or unproductive.</p>
+                
+                <div class="category-tabs">
+                    <button class="tab-btn active" data-category="productive">Productive Sites</button>
+                    <button class="tab-btn" data-category="unproductive">Unproductive Sites</button>
+                </div>
+
+                <div class="category-content">
+                    <div class="category-panel active" id="productive-panel">
+                        <div class="site-list" id="productiveSites">
+                            <div class="loading">Loading...</div>
+                        </div>
+                        <div class="add-site-form">
+                            <input type="text" id="addProductiveSite" placeholder="Add productive site (e.g., github.com)">
+                            <button class="btn btn-primary" id="addProductiveBtn">Add Site</button>
+                        </div>
+                    </div>
+
+                    <div class="category-panel" id="unproductive-panel">
+                        <div class="site-list" id="unproductiveSites">
+                            <div class="loading">Loading...</div>
+                        </div>
+                        <div class="add-site-form">
+                            <input type="text" id="addUnproductiveSite" placeholder="Add unproductive site (e.g., facebook.com)">
+                            <button class="btn btn-primary" id="addUnproductiveBtn">Add Site</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- General Settings -->
+            <div class="settings-section">
+                <h2>General Settings</h2>
+                
+                <div class="setting-item">
+                    <label class="setting-label">
+                        <input type="checkbox" id="notificationsEnabled" checked>
+                        <span class="checkmark"></span>
+                        Enable Notifications
+                    </label>
+                    <p class="setting-description">Receive notifications about your productivity progress</p>
+                </div>
+
+                <div class="setting-item">
+                    <label class="setting-label">
+                        Daily Goal (hours)
+                        <input type="number" id="dailyGoal" min="1" max="24" value="8" class="number-input">
+                    </label>
+                    <p class="setting-description">Set your daily browsing time goal</p>
+                </div>
+
+                <div class="setting-item">
+                    <label class="setting-label">
+                        Inactivity Threshold (seconds)
+                        <input type="number" id="inactivityThreshold" min="10" max="300" value="30" class="number-input">
+                    </label>
+                    <p class="setting-description">Time of inactivity before considering you away from the computer</p>
+                </div>
+            </div>
+
+            <!-- Data Management -->
+            <div class="settings-section">
+                <h2>Data Management</h2>
+                
+                <div class="data-actions">
+                    <button class="btn btn-secondary" id="exportData">Export Data</button>
+                    <button class="btn btn-danger" id="clearData">Clear All Data</button>
+                </div>
+                
+                <div class="data-info">
+                    <p><strong>Data Storage:</strong> All your browsing data is stored locally in your browser.</p>
+                    <p><strong>Privacy:</strong> No data is sent to external servers.</p>
+                </div>
+            </div>
+
+            <!-- Save Button -->
+            <div class="save-section">
+                <button class="btn btn-primary btn-large" id="saveSettings">Save Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+</html>

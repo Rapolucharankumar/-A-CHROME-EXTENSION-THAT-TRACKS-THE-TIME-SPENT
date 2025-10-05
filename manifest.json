@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Website Time Tracker",
+  "version": "1.0",
+  "description": "Track time spent on different websites and provide productivity analytics",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "alarms"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Website Time Tracker"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["dashboard.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

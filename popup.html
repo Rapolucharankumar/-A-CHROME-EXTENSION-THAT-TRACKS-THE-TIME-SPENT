@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Time Tracker</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="popup-container">
+        <header class="popup-header">
+            <h1>Website Time Tracker</h1>
+            <div class="productivity-score" id="productivityScore">
+                <span class="score-label">Productivity</span>
+                <span class="score-value" id="scoreValue">0%</span>
+            </div>
+        </header>
+
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+                <div class="stat-content">
+                    <div class="stat-value" id="totalTime">0h 0m</div>
+                    <div class="stat-label">Total Time</div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-content">
+                    <div class="stat-value" id="productiveTime">0h 0m</div>
+                    <div class="stat-label">Productive</div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">❌</div>
+                <div class="stat-content">
+                    <div class="stat-value" id="unproductiveTime">0h 0m</div>
+                    <div class="stat-label">Unproductive</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="top-sites-section">
+            <h3>Top Sites Today</h3>
+            <div class="sites-list" id="topSites">
+                <div class="loading">Loading...</div>
+            </div>
+        </div>
+
+        <div class="actions-section">
+            <button class="btn btn-primary" id="openDashboard">Open Dashboard</button>
+            <button class="btn btn-secondary" id="openSettings">Settings</button>
+        </div>
+
+        <div class="current-site" id="currentSite">
+            <div class="current-site-label">Currently on:</div>
+            <div class="current-site-name" id="currentSiteName">-</div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
